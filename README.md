@@ -2,7 +2,7 @@
 
 Um aplicativo simples em React Native para cadastrar fornecedores, armazenando os dados localmente com AsyncStorage.
 
-O [relatório de práticas](https://github.com/user-attachments/files/19440742/Projeto.Nivel.5_.Por.que.nao.paralelizar_.pdf) foi confeccionado em formato PDF e produzido em conjunto com o desenvolvimento do projeto.
+O [relatório de práticas](https://github.com/user-attachments/files/19446951/Projeto.Nivel.5_.Por.que.nao.paralelizar_.pdf) foi confeccionado em formato PDF e produzido em conjunto com o desenvolvimento do projeto.
 
 ## 📌 Funcionalidades
 - Adicionar fornecedores com nome, endereço, contato, categoria e imagem.
