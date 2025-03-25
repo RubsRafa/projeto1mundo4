@@ -2,17 +2,9 @@ import { useEffect, useState } from "react"
 import { View, Text, TextInput, Button, FlatList, Image, StyleSheet, ScrollView } from "react-native"
 import * as ImagePicker from 'expo-image-picker';
 import AsyncStorage from "@react-native-async-storage/async-storage";
-
-type Fornecedor = {
-  nome: String,
-  endereco: String,
-  contato: String,
-  categoria: String,
-  imagem: String | null,
-}
+import { Fornecedor } from "./Fornecedores";
 
 export const Meeting = () => {
-  const [fetch, setFetch] = useState(false);
   const [fornecedores, setFornecedores] = useState<Fornecedor[]>([]);
   const [nome, setNome] = useState('');
   const [endereco, setEndereco] = useState('');
@@ -21,20 +13,8 @@ export const Meeting = () => {
   const [imagem, setImagem] = useState<String | null>(null);
   const [erro, setErro] = useState<String | null>(null);
 
-  useEffect(() => {
-    fetchFornecedores();
-  }, [fetch]);
-
-  const fetchFornecedores = async () => {
-    const dados = await AsyncStorage.getItem('fornecedores');
-    if (dados) {
-      setFornecedores(JSON.parse(dados));
-    }
-  }
-
   const saveFornecedores = async (dados: Fornecedor[]) => {
     await AsyncStorage.setItem('fornecedores', JSON.stringify(dados));
-    setFetch(!fetch);
   }
 
   const addFornecedor = async () => {
@@ -54,7 +34,6 @@ export const Meeting = () => {
     setContato('');
     setCategoria('');
     setImagem(null);
-    setFetch(!fetch);
   }
 
   const selecionarImagem = async () => {
@@ -86,21 +65,6 @@ export const Meeting = () => {
           <Image source={{ uri: String(imagem) }} />
         }
         <Button title="Adicionar Fornecedor" onPress={addFornecedor} color="green" />
-        <FlatList
-          data={fornecedores}
-          keyExtractor={(item, index) => index.toString()}
-          renderItem={({ item }) => (
-            <View style={{ marginVertical: 10, borderBottomWidth: 1, paddingBottom: 5 }}>
-              {item.imagem &&
-                <Image source={{ uri: String(item.imagem) }} style={styles.butonStyle} />
-              }
-              <Text>Nome: {item.nome}</Text>
-              <Text>Endereço: {item.endereco}</Text>
-              <Text>Contato: {item.contato}</Text>
-              <Text>Categoria: {item.categoria}</Text>
-            </View>
-          )}
-        />
       </View>
     </ScrollView>
   )
