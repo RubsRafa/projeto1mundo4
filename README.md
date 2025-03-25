@@ -1,50 +1,52 @@
-# Welcome to your Expo app 👋
+# Fornecedores App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Um aplicativo simples em React Native para cadastrar fornecedores, armazenando os dados localmente com AsyncStorage.
 
-## Get started
+O [relatório de práticas](https://github.com/user-attachments/files/19440721/Projeto.Nivel.5_.Por.que.nao.paralelizar_.pdf) foi confeccionado em formato PDF e produzido em conjunto com o desenvolvimento do projeto.
 
-1. Install dependencies
+## 📌 Funcionalidades
+- Adicionar fornecedores com nome, endereço, contato, categoria e imagem.
+- Listar fornecedores cadastrados.
+- Salvar os dados localmente usando AsyncStorage.
+- Remover todos os fornecedores do armazenamento local.
+- Interface rolável para facilitar a navegação.
 
+## 🛠️ Tecnologias Utilizadas
+- React Native
+- TypeScript
+- Expo
+- AsyncStorage
+- Expo ImagePicker
+
+## 📦 Instalação
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/RubsRafa/projeto1mundo4.git
+   ```
+2. Acesse a pasta do projeto:
+   ```bash
+   cd projeto1mundo4
+   ```
+3. Instale as dependências:
    ```bash
    npm install
+   # ou
+   yarn install
    ```
 
-2. Start the app
-
+## 🚀 Como Executar
+1. Inicie o Expo:
    ```bash
-    npx expo start
+   npx expo start
    ```
+2. Escaneie o QR Code com o aplicativo Expo Go ou execute no emulador.
 
-In the output, you'll find options to open the app in a
+## 📷 Seleção de Imagens
+O app permite escolher uma imagem da galeria usando `expo-image-picker`. Certifique-se de conceder permissões de acesso à mídia no seu dispositivo.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## ⚠️ Validação
+Antes de adicionar um fornecedor, todos os campos obrigatórios devem ser preenchidos. Caso contrário, um alerta será exibido.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
+Desenvolvido com ❤️ por Rubs
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
